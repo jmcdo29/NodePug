@@ -1,1 +1,1 @@
-"# NodePug" 
+# NodePug
