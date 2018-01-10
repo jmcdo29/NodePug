@@ -1,0 +1,26 @@
+{
+  "name": "nodepug",
+  "version": "1.0.0",
+  "description": "A node app to help understand how to attach .pug files to node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PerfectOrphan31/NodePug.git"
+  },
+  "keywords": [
+    "Node",
+    "pug",
+    "github",
+    "tutorial",
+    "practice"
+  ],
+  "author": "Jay McDoniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PerfectOrphan31/NodePug/issues"
+  },
+  "homepage": "https://github.com/PerfectOrphan31/NodePug#readme"
+}
