@@ -13,9 +13,7 @@ app.get('/', (req, res, next) => {
   .post('/', async (req, res, next) => {
     //console.log(req.body.city);
     let weather = await api.call(req.body.city);
-    console.log(weather);
     //weather = JSON.parse(weather.response.body);
-    console.log(weather.main);
     if (weather.main == undefined) {
       res.render('index', { weather: null, error: 'Error, please try again' });
     } else {
