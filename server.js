@@ -6,6 +6,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res, next) => {
   res.render('index');
@@ -13,9 +14,8 @@ app.get('/', (req, res, next) => {
   .post('/', async (req, res, next) => {
     //console.log(req.body.city);
     let weather = await api.call(req.body.city);
-    //weather = JSON.parse(weather.response.body);
     if (weather.main == undefined) {
-      res.render('index', { weather: null, error: 'Error, please try again' });
+      res.render('index', { weather: null, error: (weather.message.substring(38,52) == 'city not found') ? "City not found. Please check the name of "+req.body.city : 'Error'});
     } else {
       let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
       res.render('index', { weather: weatherText, error: null });
